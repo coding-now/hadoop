@@ -55,7 +55,7 @@ public class ExcelParser {
 				while (cellIterator.hasNext()) {
 					Cell cell = cellIterator.next();
 					try {
-						currentString.append(getCellContent(cell));
+						currentString.append(getCellContent(cell)).append("\t");
 					}catch (Exception ex){
 						logger.error("error-line:{}",cell.getAddress(),ex);
 						context.getCounter(Config.LineCounter.EXCEL_LINE_SKIP).increment(1);
