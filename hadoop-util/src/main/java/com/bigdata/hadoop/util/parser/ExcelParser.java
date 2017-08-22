@@ -13,7 +13,7 @@
  */
 package com.bigdata.hadoop.util.parser;
 
-import com.bigdata.hadoop.util.mapreduce.Config;
+import com.bigdata.hadoop.util.mapreduce.ExcelConfig;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -58,7 +58,7 @@ public class ExcelParser {
 						currentString.append(getCellContent(cell)).append("\t");
 					}catch (Exception ex){
 						logger.error("error-line:{}",cell.getAddress(),ex);
-						context.getCounter(Config.LineCounter.EXCEL_LINE_SKIP).increment(1);
+						context.getCounter(ExcelConfig.LineCounter.EXCEL_LINE_SKIP).increment(1);
 					}
 				}
 				currentString.append("\n");

@@ -12,7 +12,7 @@ import org.apache.hadoop.util.Tool;
 /**
  * Created by WangBin on 2017/7/28.
  */
-public class Config extends Configured implements Tool {
+public class ExcelConfig extends Configured implements Tool {
     public static enum LineCounter {
         EXCEL_LINE_SKIP
     }

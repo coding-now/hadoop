@@ -1,0 +1,14 @@
+
+
+
+show databases
+
+use default
+
+create table test4(a int ,b string)ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ';
+
+load data local inpath '/home/hadoop/hive-data.txt' overwrite into table default.test4;
+
+select * from default.test4;
+
+select a*10,concat(b,"22") from test4;

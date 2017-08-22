@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 package com.bigdata.hadoop.util;
-import com.bigdata.hadoop.util.mapreduce.Config;
+import com.bigdata.hadoop.util.mapreduce.ExcelConfig;
 import org.apache.hadoop.util.ToolRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,7 +67,7 @@ public class ExcelResolveDriver {
 		DateFormat formatter = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss" );
 		Date start = new Date();
 
-		Config conf = new Config();
+		ExcelConfig conf = new ExcelConfig();
 		//运行任务
 		int res = ToolRunner.run(conf.getConf(),conf,args);
 
