@@ -28,17 +28,17 @@ public class FundsRetrive extends EvalFunc<String> {
                 .concat(code).concat("&page=1&per=1000&sdate=2015-08-01&edate=");
         String val = HttpClientUtil.httpGet(url);
         String body = val.substring(val.indexOf("<tbody>")+"<tbody>".length(),val.indexOf("</tbody>"));
-        body = body.replaceAll("<tr>","\n").replaceAll("</tr>","\r");
+        body = body.replaceAll("<tr>","\n"+code).replaceAll("</tr>","\r");
         body = body.replaceAll("<td>"," ").replaceAll("</td>"," ");
         body = body.replaceAll("<td class='tor bold'>"," ")
                 .replaceAll("<td class='tor bold red'>"," ")
                 .replaceAll("<td class='tor bold grn'>"," ").replaceAll("<td class='.*'>"," ");
         System.out.println("==>"+body);
-        return val;
+        return body;
     }
     public static void main(String[] args)throws Exception{
         String val = new FundsRetrive().getHistoryData("150008");
-        //System.out.println("==>"+val);
+        System.out.println("==>"+val);
     }
     @Override
     /**
