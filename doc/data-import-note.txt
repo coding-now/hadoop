@@ -1,0 +1,6 @@
+
+ rz
+ hadoop fs -put A-stock.xlsx /excel
+ hadoop fs -put funds.xls /excel
+
+ hadoop jar excelReader-jar-with-dependencies.jar com.bigdata.hadoop.util.ExcelResolveDriver "hdfs://master.hadoop:9000/excel/funds.xls" "hdfs://master.hadoop:9000/funds/"

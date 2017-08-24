@@ -36,10 +36,12 @@ public class FundsRetrive extends EvalFunc<String> {
         System.out.println("==>"+body);
         return body;
     }
+
     public static void main(String[] args)throws Exception{
         String val = new FundsRetrive().getHistoryData("150008");
         System.out.println("==>"+val);
     }
+
     @Override
     /**
      * This method gives a name to the column.
