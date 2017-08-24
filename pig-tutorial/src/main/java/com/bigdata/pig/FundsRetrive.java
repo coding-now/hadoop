@@ -23,7 +23,7 @@ public class FundsRetrive extends EvalFunc<String> {
         }
         return null;
     }
-    private String getHistoryData(String code)throws IOException{
+    public String getHistoryData(String code)throws IOException{
         String url = "http://fund.eastmoney.com/f10/F10DataApi.aspx?type=lsjz&code="
                 .concat(code).concat("&page=1&per=1000&sdate=2015-08-01&edate=");
         String val = HttpClientUtil.httpGet(url);
@@ -35,11 +35,6 @@ public class FundsRetrive extends EvalFunc<String> {
                 .replaceAll("<td class='tor bold grn'>"," ").replaceAll("<td class='.*'>"," ");
         System.out.println("==>"+body);
         return body;
-    }
-
-    public static void main(String[] args)throws Exception{
-        String val = new FundsRetrive().getHistoryData("150008");
-        System.out.println("==>"+val);
     }
 
     @Override

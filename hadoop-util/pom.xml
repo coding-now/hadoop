@@ -7,11 +7,10 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.bigdata.hadoop</groupId>
-  <artifactId>util</artifactId>
+  <artifactId>hadoop-util</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>hadoop-util</name>
-  <url>http://maven.apache.org</url>
 
   <dependencies>
     <dependency>
