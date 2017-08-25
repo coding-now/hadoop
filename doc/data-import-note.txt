@@ -1,6 +1,11 @@
+ wget www-eu.apache.org/dist/pig/latest/pig-0.17.0.tar.gz
 
  rz
  hadoop fs -put A-stock.xlsx /excel
  hadoop fs -put funds.xls /excel
 
- hadoop jar excelReader-jar-with-dependencies.jar com.bigdata.hadoop.util.ExcelResolveDriver "hdfs://master.hadoop:9000/excel/funds.xls" "hdfs://master.hadoop:9000/funds/"
+ hadoop jar hadoop-util-jar-with-dependencies.jar com.bigdata.hadoop.util.ExcelResolveDriver "hdfs://master.hadoop:9000/excel/funds.xls" "hdfs://master.hadoop:9000/funds/"
+
+ pig -Dpig.additional.jars=/home/hadoop/okio-1.11.0.jar:/home/hadoop/tutorial.jar:/home/hadoop/okhttp-3.6.0.jar pig-script/fund-etl.pig
+
+ hadoop jar hadoop-util-jar-with-dependencies.jar com.bigdata.hadoop.util.FundsStatDataRetriveDriver "hdfs://master.hadoop:9000/funds" "hdfs://master.hadoop:9000/funds-history"

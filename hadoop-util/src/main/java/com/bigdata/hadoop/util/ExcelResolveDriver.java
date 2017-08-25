@@ -34,24 +34,6 @@ public class ExcelResolveDriver {
      * @throws Exception when something goes wrong
      */
 	public static void main(String[] args) throws Exception {		
-		/*
-		logger.info("Excel Resolver Driver start...");
-		Job job = new Job();
-		job.setJarByClass(ExcelResolveDriver.class);
-		job.setJobName("Excel-Record-Resolver");
-
-		job.setMapperClass(ExcelMapper.class);
-		job.setReducerClass(ExcelReducer.class);
-		job.setNumReduceTasks(0);
-
-		FileInputFormat.addInputPath(job, new Path(args[0]));
-		FileOutputFormat.setOutputPath(job, new Path(args[1]));
-		job.setInputFormatClass(ExcelInputFormat.class);
-		job.setOutputKeyClass(Text.class);
-		job.setOutputValueClass(Text.class);
-
-		boolean ret = job.waitForCompletion(true);
-		logger.info("excelResolver,ret:{}",ret);*/
 		//判断参数个数是否正确
 		//如果无参数运行则显示以作程序说明
 		if ( args.length != 2 )

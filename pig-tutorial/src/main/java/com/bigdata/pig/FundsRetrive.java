@@ -1,5 +1,6 @@
 package com.bigdata.pig;
 
+import com.bigdata.util.FundLoadUtil;
 import com.bigdata.util.HttpClientUtil;
 import org.apache.pig.EvalFunc;
 import org.apache.pig.FuncSpec;
@@ -24,16 +25,7 @@ public class FundsRetrive extends EvalFunc<String> {
         return null;
     }
     public String getHistoryData(String code)throws IOException{
-        String url = "http://fund.eastmoney.com/f10/F10DataApi.aspx?type=lsjz&code="
-                .concat(code).concat("&page=1&per=1000&sdate=2015-08-01&edate=");
-        String val = HttpClientUtil.httpGet(url);
-        String body = val.substring(val.indexOf("<tbody>")+"<tbody>".length(),val.indexOf("</tbody>"));
-        body = body.replaceAll("<tr>","\n"+code).replaceAll("</tr>","\r");
-        body = body.replaceAll("<td>"," ").replaceAll("</td>"," ");
-        body = body.replaceAll("<td class='tor bold'>"," ")
-                .replaceAll("<td class='tor bold red'>"," ")
-                .replaceAll("<td class='tor bold grn'>"," ").replaceAll("<td class='.*'>"," ");
-        System.out.println("==>"+body);
+        String body = FundLoadUtil.loadByCode(code);
         return body;
     }
 
