@@ -5,7 +5,7 @@ import com.bigdata.pig.FundsRetrive;
 /**
  * Created by WangBin on 2017/8/24.
  */
-public class StringTest {
+public class StringUtilTest {
     public static void main(String[] args)throws Exception{
         String val = "";
         val = new FundsRetrive().getHistoryData("150008");
