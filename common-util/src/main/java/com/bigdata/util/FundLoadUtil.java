@@ -22,6 +22,8 @@ public class FundLoadUtil {
         System.out.println("==>" + body);
         return body;
     }
+
+    /*just for test*/
     public static void main(String[] args)throws Exception{
         String val = "";
         val = loadByCode("150008");
