@@ -12,7 +12,8 @@ public class FundLoadUtil {
                 .concat(code).concat("&page=1&per=1000&sdate=2015-08-01&edate=");
         System.out.println("-fund.eastmoney===>" + url);
         String val = HttpClientUtil.httpGet(url);
-        String body = val.substring(val.indexOf("<tbody>") + "<tbody>".length(), val.indexOf("</tbody>"));
+        String body = val.substring(val.indexOf("<tbody>") + "<tbody>".length(),
+                val.indexOf("</tbody>"));
         body = body.replaceAll("<tr>", "\n" + code).replaceAll("</tr>", "\r");
         body = body.replaceAll("<td>", " ").replaceAll("</td>", " ");
         body = body.replaceAll("<td class='tor bold'>", " ")
@@ -22,6 +23,7 @@ public class FundLoadUtil {
         System.out.println("==>" + body);
         return body;
     }
+
 
     /*just for test*/
     public static void main(String[] args)throws Exception{
