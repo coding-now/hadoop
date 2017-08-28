@@ -1,2 +1,3 @@
 
 nohup /usr/hadoop/sbin/mr-jobhistory-daemon.sh start historyserver &
+
