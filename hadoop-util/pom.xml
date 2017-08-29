@@ -100,7 +100,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass></mainClass>
+              <mainClass>com.bigdata.hadoop.util.ExcelResolveDriver</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>

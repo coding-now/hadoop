@@ -11,7 +11,7 @@ public class FundLoadUtil {
         String url = "http://fund.eastmoney.com/f10/F10DataApi.aspx?type=lsjz&code="
                 .concat(code).concat("&page=1&per=1000&sdate=2015-08-01&edate=");
         System.out.println("-fund.eastmoney===>" + url);
-        String val = HttpClientUtil.httpGet(url);
+        String val = HttpClientUtil.doPost(url,null,"utf-8");
         String body = val.substring(val.indexOf("<tbody>") + "<tbody>".length(),
                 val.indexOf("</tbody>"));
         body = body.replaceAll("<tr>", "\n" + code).replaceAll("</tr>", "\r");

@@ -38,4 +38,12 @@
         <name>mapreduce.jobhistory.webapp.address</name>
         <value>master.hadoop:19888</value>
     </property>
+    <property>
+        <name>hadoop.home.dir</name>
+        <value>D:\hadoop-workspace\hadoop-2.8</value>
+    </property>
+    <property>
+        <name>HADOOP_HOME</name>
+        <value>D:\hadoop-workspace\hadoop-2.8</value>
+    </property>
 </configuration>
