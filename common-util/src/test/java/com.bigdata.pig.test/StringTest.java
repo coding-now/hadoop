@@ -11,4 +11,6 @@ public class StringTest {
         System.out.println("==>"+val.substring(0,val.indexOf("/")));*/
         System.out.println(val);
     }
+
+    /*    > CREATE TABLE TEST4(FUND_CODE STRING,TS DATE,C_PE FLOAT,TOTAL_PE FLOAT,INC_RATIO VARCHAR,BUY_S VARCHAR,SELL_S VARCHAR,DIV VARCHAR )ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ';*/
 }

@@ -118,5 +118,6 @@
     <module>hadoop-util</module>
     <module>pig-tutorial</module>
     <module>common-util</module>
+    <module>hadoop-hive-utility</module>
   </modules>
 </project>

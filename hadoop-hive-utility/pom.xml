@@ -7,10 +7,10 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.bigdata.hadoop</groupId>
-  <artifactId>hadoop-util</artifactId>
+  <artifactId>hadoop-hive-utility</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>hadoop-util</name>
+  <name>hadoop-hive-demo</name>
 
   <dependencies>
     <dependency>
@@ -37,12 +37,7 @@
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-mapreduce-client-common</artifactId>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-mapreduce-examples -->
-    <dependency>
-      <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-mapreduce-examples</artifactId>
-      <version>2.8.0</version>
-    </dependency>
+
   </dependencies>
 
   <build>
@@ -51,46 +46,8 @@
         <directory>src/main/resources</directory>
       </resource>
     </resources>
-    <finalName>hadoop-util</finalName>
-
+    <finalName>hadoop-hive-demo</finalName>
     <plugins>
-      <!--<plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          &lt;!&ndash;<defaultLibBundleDir>lib</defaultLibBundleDir>&ndash;&gt;
-          <source>1.8</source>
-          <target>1.8</target>
-          <encoding>UTF-8</encoding>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>copy</id>
-            <phase>package</phase>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>
-                lib
-              </outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>2.4</version>
-        <configuration>
-          <encoding>UTF-8</encoding>
-        </configuration>
-      </plugin>-->
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
@@ -100,7 +57,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>com.bigdata.hadoop.hive.ExcelResolveDriver</mainClass>
+              <mainClass></mainClass>
             </manifest>
           </archive>
           <descriptorRefs>
