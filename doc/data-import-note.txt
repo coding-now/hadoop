@@ -19,17 +19,7 @@ data = filter data_list by c_pe >0;
 --dump data_list
 STORE data INTO 'hdfs://master.hadoop:9000/data/funds-clean2' USING PigStorage();
 
-CREATE TABLE fund_history(
-FUND_CODE varchar(10),
-TS varchar(15),
-C_PE FLOAT,
-TOTAL_PE FLOAT,
-INC_RATIO VARCHAR(7),
-BUY_S VARCHAR(20),
-SELL_S varchar(20),
-divi varchar(20)
-)
-ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ';
+CREATE TABLE fund_history(FUND_CODE varchar(10),TS varchar(15),C_PE FLOAT,TOTAL_PE FLOAT,INC_RATIO VARCHAR(7),BUY_S VARCHAR(20),SELL_S varchar(20),divi varchar(20))ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ';
 
 /user/hive/warehouse/fund_history
 
